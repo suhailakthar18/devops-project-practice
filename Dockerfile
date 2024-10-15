@@ -1,5 +1,5 @@
 # Use an official OpenJDK image
-FROM openjdk:11-jdk-slim
+FROM openjdk:17-jdk-slim
 
 # Set working directory
 WORKDIR /app
@@ -15,4 +15,5 @@ EXPOSE 8080
 
 # Run the Spring Boot application
 CMD ["java", "-jar", "target/devops-project-1.0-SNAPSHOT.jar"]
+
 
