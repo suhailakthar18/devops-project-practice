@@ -1,5 +1,3 @@
-
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -8,6 +6,8 @@
     <groupId>com.suhail.devops</groupId>
     <artifactId>devops-project</artifactId>
     <version>1.0-SNAPSHOT</version>
+    
+    <packaging>jar</packaging> <!-- Added packaging type -->
 
     <properties>
         <java.version>17</java.version>  <!-- Updated to match Java 17 -->
@@ -30,6 +30,13 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version> <!-- Specify Spring Boot version -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal> <!-- Ensure the application is repackaged -->
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <!-- Maven Compiler Plugin -->
@@ -45,4 +52,3 @@
         </plugins>
     </build>
 </project>
-
